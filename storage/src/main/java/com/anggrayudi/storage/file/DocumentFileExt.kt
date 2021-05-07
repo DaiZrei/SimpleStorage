@@ -387,7 +387,7 @@ fun DocumentFile.makeFile(
         return null
     }
 
-    val cleanName = name.removeForbiddenCharsFromFilename().trimFileSeparator()
+    val cleanName = name
     val subFolder = cleanName.substringBeforeLast('/', "")
     val parent = if (subFolder.isEmpty()) this else {
         makeFolder(context, subFolder, forceCreate) ?: return null
